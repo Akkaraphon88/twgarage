@@ -219,25 +219,3 @@ footer {
     max-width: 90%;
   }
 }
-
-/* ---------- 13. รองรับโหมดแสง (Light Mode) ---------- */
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #f9f9f9;
-    color: #111;
-  }
-
-  .navbar, .service, footer {
-    background-color: #ffffff;
-    color: #111;
-  }
-
-  .service p {
-    color: #222;
-  }
-
-  .hero-overlay {
-    background: rgba(255,255,255,0.85);
-    color: #111;
-  }
-}
