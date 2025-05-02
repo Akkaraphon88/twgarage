@@ -1,49 +1,50 @@
-<!DOCTYPE html>
-<html lang="th">
+<!DOCTYPE html> <!-- ระบุว่าไฟล์นี้เป็น HTML5 -->
+<html lang="th"> <!-- เริ่มต้นเอกสาร HTML และระบุว่าภาษาเป็นภาษาไทย -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TW Garage - แยกกะเฉดระยอง</title>
+  <meta charset="UTF-8"> <!-- กำหนดรหัสอักขระเป็น UTF-8 รองรับภาษาไทย -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ทำให้เว็บแสดงผลดีบนมือถือ -->
+  <title>TW Garage - แยกกะเฉดระยอง</title> <!-- ชื่อแท็บเบราว์เซอร์ -->
   <style>
+    /* เริ่มส่วน CSS สำหรับตกแต่งเว็บไซต์ */
     body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #121212;
-      color: white;
-      text-align: center;
+      margin: 0; /* เอาขอบรอบหน้าเว็บออก */
+      font-family: sans-serif; /* ตั้งฟอนต์เรียบง่าย */
+      background-color: #121212; /* สีพื้นหลังเว็บเป็นเทาเข้ม */
+      color: white; /* สีตัวอักษรขาว */
+      text-align: center; /* จัดข้อความกึ่งกลาง */
     }
     header {
-      background-image: url('garage.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 20px;
+      background-image: url('garage.jpg'); /* ใช้รูปหัวเว็บ */
+      background-size: cover; /* ปรับขนาดรูปให้เต็ม */
+      background-position: center; /* จัดให้อยู่กลาง */
+      padding: 100px 20px; /* เพิ่มพื้นที่รอบหัวเว็บ */
     }
     header h1 {
-      background: rgba(0, 0, 0, 0.6);
-      display: inline-block;
+      background: rgba(0, 0, 0, 0.6); /* พื้นหลังหัวเรื่องโปร่งใส */
+      display: inline-block; /* แสดงเป็นกล่องแนวนอน */
       padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 2em;
+      border-radius: 10px; /* ขอบโค้งมน */
+      font-size: 2em; /* ขนาดตัวอักษรใหญ่ */
     }
     section.description {
       padding: 20px;
       max-width: 800px;
-      margin: auto;
+      margin: auto; /* จัดให้อยู่กลางหน้า */
     }
     .button {
       display: block;
-      background-color: #2ecc71;
+      background-color: #2ecc71; /* สีเขียวสดใส */
       color: white;
       padding: 14px 20px;
       margin: 10px auto;
-      text-decoration: none;
+      text-decoration: none; /* เอาขีดใต้ลิงก์ออก */
       border-radius: 10px;
       max-width: 300px;
       font-size: 1.1em;
     }
     .gallery {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* ให้รูปขึ้นบรรทัดใหม่เมื่อเต็ม */
       justify-content: center;
       gap: 15px;
       padding: 20px;
@@ -51,20 +52,20 @@
     .gallery img {
       width: 150px;
       height: 150px;
-      object-fit: cover;
+      object-fit: cover; /* จัดรูปไม่ให้ยืดเบี้ยว */
       border-radius: 10px;
-      border: 2px solid #444;
+      border: 2px solid #444; /* ขอบรูปสีเทา */
     }
     footer {
       padding: 20px;
       color: #aaa;
-      font-size: 0.9em;
+      font-size: 0.9em; /* ตัวเล็กลงเล็กน้อย */
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>TW Garage</h1>
+    <h1>TW Garage</h1> <!-- หัวเรื่องหลัก -->
   </header>
 
   <section class="description">
@@ -76,20 +77,22 @@
       เราให้บริการทั้งในและนอกสถานที่ ราคายุติธรรม ดูแลทั้งรถยนต์และจักรยานยนต์ ให้รถคุณปลอดภัยทุกเส้นทาง
     </p>
 
+    <!-- ปุ่มลิงก์ต่าง ๆ -->
     <a class="button" href="tel:0918359456">📞 โทรเลย 091-8359-456</a>
-    <a class="button" href="https://lin.ee/ACQTyay" target="_blank">💬 แชททาง LineOA</a>
-    <a class="button" href="https://www.facebook.com/thanawat.worakleep" target="_blank">📘 เพจ Facebook</a>
+    <a class="button" href="https://lin.ee/ACQTyay" target="_blank">💬 แชทสอบถามจองคิว LineOA</a>
+    <a class="button" href="https://facebook.com/yourpage" target="_blank">📘 เพจ Facebook</a>
     <a class="button" href="https://maps.app.goo.gl/eBQPr6KXKs6HfJDWA" target="_blank">🗺️ Google Map TW Garage</a>
-
   </section>
 
-  <section class="gallery">
+  <section class="gallery"> <!-- แสดงรูปบริการ -->
     <img src="img1.png" alt="บริการ 1">
     <img src="img2.png" alt="บริการ 2">
     <img src="img3.png" alt="บริการ 3">
     <img src="img4.png" alt="บริการ 4">
     <img src="img5.png" alt="บริการ 5">
     <img src="img6.png" alt="บริการ 6">
+    <img src="img6.png" alt="บริการ 7">
+    <img src="img6.png" alt="บริการ 8">
   </section>
 
   <footer>
