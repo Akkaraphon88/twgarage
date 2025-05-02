@@ -9,11 +9,17 @@
   <meta name="description" content="ศูนย์บริการรถยนต์ระยอง TW Garage บริการยาง เปลี่ยนน้ำมันเครื่อง ช่วงล่าง แบตเตอรี่ และอื่น ๆ โทรเลย 091-8359-456">
   <meta name="keywords" content="อู่ซ่อมรถระยอง, TW Garage, ยาง, น้ำมันเครื่อง, เปลี่ยนยาง, รถยนต์, มอเตอร์ไซค์">
 
+  <!-- แชร์โซเชียล -->
+  <meta property="og:title" content="TW Garage - ระยอง">
+  <meta property="og:description" content="บริการรถยนต์ครบวงจร ยาง น้ำมันเครื่อง เบรก ช่วงล่าง โทร 091-8359-456">
+  <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg">
+  <meta property="og:url" content="https://akkaraphon88.github.io/twgarage">
+
   <!-- Favicon ไอคอนหน้าเว็บ -->
   <link rel="icon" type="image/png" href="favicon.png">
 
+  <!-- ใส่ไฟล์ CSS ภายนอกหากมี: <link rel="stylesheet" href="style.css"> -->
   <style>
-    /* พื้นฐานเว็บสีเข้มสไตล์ดุดัน */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -22,7 +28,6 @@
       overflow-x: hidden;
     }
 
-    /* เมนูด้านบนแบบ Sticky */
     .navbar {
       background-color: #1e1e1e;
       padding: 10px;
@@ -30,7 +35,7 @@
       position: sticky;
       top: 0;
       z-index: 10;
-      box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3); /* เงาแดง */
+      box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
     }
     .navbar a {
       color: white;
@@ -43,7 +48,6 @@
       color: #ff5555;
     }
 
-    /* Hero Section พร้อมเงาและ animation */
     .hero {
       position: relative;
       text-align: center;
@@ -53,7 +57,7 @@
       width: 100%;
       max-height: 60vh;
       object-fit: cover;
-      filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px #ff0000); /* เงาแดงใต้ภาพ */
+      filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px #ff0000);
       animation: fadein 1.5s ease-out;
     }
     .hero-overlay {
@@ -61,7 +65,7 @@
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      background: rgba(0, 0, 0, 0.6);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(30,30,30,0.9));
       padding: 20px;
       border-radius: 10px;
       max-width: 800px;
@@ -77,7 +81,6 @@
       line-height: 1.6;
     }
 
-    /* อนิเมชั่น */
     @keyframes fadein {
       from { opacity: 0; transform: scale(1.05); }
       to { opacity: 1; transform: scale(1); }
@@ -87,7 +90,6 @@
       to { opacity: 1; transform: translate(-50%, 0); }
     }
 
-    /* คำอธิบาย + ปุ่มลิงก์ */
     section.description {
       padding: 30px 20px;
       max-width: 800px;
@@ -96,7 +98,7 @@
     }
     .button {
       display: block;
-      background-color: #ff3333; /* สีแดงสด */
+      background-color: #ff3333;
       color: white;
       padding: 14px 20px;
       margin: 10px auto;
@@ -105,48 +107,52 @@
       max-width: 300px;
       font-size: 1.1em;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2); /* เงาเหลือง */
+      box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
     }
     .button:hover {
       box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6);
       transform: translateY(-4px);
     }
 
-    /* แกลเลอรีบริการ */
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      justify-items: center;
+      gap: 20px;
       padding: 20px;
     }
     .service {
-      width: 160px;
-      margin: 10px;
-      text-align: center;
       background-color: #1e1e1e;
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4); /* เงาแดง */
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
       transition: transform 0.3s, box-shadow 0.3s;
     }
     .service:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.5); /* เงาเหลือง */
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 0, 0.5);
     }
     .service img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
+      width: 100%;
+      max-width: 150px;
+      height: auto;
       border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
     }
     .service p {
       margin-top: 8px;
-      font-size: 0.95em;
+      font-size: 1em;
       color: #ddd;
     }
 
-    /* ส่วนท้าย */
     footer {
       padding: 20px;
       color: #aaa;
@@ -157,25 +163,19 @@
     }
 
     @media (max-width: 768px) {
-      .hero-overlay {
-        padding: 15px;
-        font-size: 0.95em;
-      }
-      .button {
-        max-width: 90%;
-      }
+      .hero-overlay { padding: 15px; font-size: 0.95em; }
+      .button { max-width: 90%; }
     }
   </style>
 </head>
 <body>
-  <!-- เมนูนำทาง -->
   <nav class="navbar">
     <a href="#">หน้าแรก</a>
-    <a href="#services">บริการ</a>
+    <a href="#gallery">บริการ</a>
     <a href="#contact">ติดต่อ</a>
+    <a href="#pricing">อัตราค่าบริการ</a>
   </nav>
 
-  <!-- Hero Section แบบมีรูป + เงา + อนิเมชั่น -->
   <section class="hero">
     <img src="garage.jpg" alt="รูปหน้าร้าน TW Garage">
     <div class="hero-overlay">
@@ -184,7 +184,6 @@
     </div>
   </section>
 
-  <!-- คำอธิบาย + ปุ่มติดต่อ -->
   <section class="description" id="contact">
     <p>ถ่ายน้ำมันเครื่อง, เปลี่ยนยาง, ช่วงล่าง, ระบบเบรก, แบตเตอรี่ และอื่น ๆ ทั้งในและนอกสถานที่</p>
     <h2>TW Garage</h2>
@@ -194,28 +193,53 @@
     <a class="button" href="https://maps.app.goo.gl/eBQPr6KXKs6HfJDWA" target="_blank">🗺️ ดูแผนที่บน Google Maps</a>
   </section>
 
-  <!-- แกลเลอรีบริการ -->
-  <section class="gallery" id="services">
+  <section class="gallery" id="gallery">
     <h2>บริการ</h2>
-    <div class="service"><img src="img1.png" alt="ยาง%"><p>ยางเปอร์เซ็นต์</p></div>
-    <div class="service"><img src="img2.png" alt="น้ำมันเครื่อง"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
-    <div class="service"><img src="img3.png" alt="ยางรถยนต์"><p>เปลี่ยนยางรถยนต์</p></div>
-    <div class="service"><img src="img4.png" alt="แบตเตอรี่"><p>เปลี่ยนแบตเตอรี่</p></div>
-    <div class="service"><img src="img5.png" alt="ช่วงล่าง"><p>เช็กช่วงล่าง</p></div>
-    <div class="service"><img src="img6.png" alt="ยางมอเตอร์ไซค์"><p>เปลี่ยนยางมอเตอร์ไซค์</p></div>
-    <div class="service"><img src="img7.png" alt="แม็ก"><p>ล้อแม็ก</p></div>
-    <div class="service"><img src="img8.png" alt="เบรก"><p>ระบบเบรก</p></div>
+    <div class="service"><img src="sv-tire.png" alt="ยาง%"><p>ยางเปอร์เซ็นต์</p></div>
+    <div class="service"><img src="sv-oil.png" alt="น้ำมันเครื่อง"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
+    <div class="service"><img src="sv-tirecar.png" alt="ยางรถยนต์"><p>เปลี่ยนยางรถยนต์</p></div>
+    <div class="service"><img src="sv-battery.png" alt="แบตเตอรี่"><p>เปลี่ยนแบตเตอรี่</p></div>
+    <div class="service"><img src="sv-suspension.png" alt="ช่วงล่าง"><p>เช็กช่วงล่าง</p></div>
+    <div class="service"><img src="sv-mototire.png" alt="ยางมอเตอร์ไซค์"><p>เปลี่ยนยางมอเตอร์ไซค์</p></div>
+    <div class="service"><img src="sv-mag.png" alt="แม็ก"><p>ล้อแม็ก</p></div>
+    <div class="service"><img src="sv-brake.png" alt="เบรก"><p>ระบบเบรก</p></div>
   </section>
 
-    <!-- แกลเลอรอัตราค่าบริการ -->
-  <section class="gallery" id="services">
-    <h2>อัตราค่าบริการ</h2>
-    <div class="service"><img src="p.png" alt="ราคาตามรุ่นอุปกรณ์นั้น"><p>ราคาตามรุ่นอุปกรณ์นั้น</p></div>
+  <section class="gallery" id="pricing">
+    <h2 style="font-size: 2.5em">อัตราค่าบริการ</h2>
+    <div class="service"><img src="pr-price.png" alt="ราคาตามรุ่นอุปกรณ์นั้น"><p>ราคาตามรุ่นอุปกรณ์นั้น</p></div>
   </section>
-  
-  <!-- ส่วนท้าย -->
+
   <footer>
     © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
   </footer>
+
+  <!-- สคริปต์เปิดภาพแบบเต็มจอเมื่อคลิก -->
+  <script>
+    document.querySelectorAll('.service img').forEach(img => {
+      img.addEventListener('click', () => {
+        const full = document.createElement('div');
+        full.style.position = 'fixed';
+        full.style.top = 0;
+        full.style.left = 0;
+        full.style.width = '100vw';
+        full.style.height = '100vh';
+        full.style.background = 'rgba(0,0,0,0.9)';
+        full.style.display = 'flex';
+        full.style.justifyContent = 'center';
+        full.style.alignItems = 'center';
+        full.style.zIndex = 1000;
+        const big = document.createElement('img');
+        big.src = img.src;
+        big.style.maxWidth = '90vw';
+        big.style.maxHeight = '90vh';
+        big.style.borderRadius = '15px';
+        big.style.boxShadow = '0 0 25px red';
+        full.appendChild(big);
+        full.onclick = () => full.remove();
+        document.body.appendChild(full);
+      });
+    });
+  </script>
 </body>
 </html>
