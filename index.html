@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>TW Garage - แยกกะเฉดระยอง</title>
 
   <!-- SEO และแชร์โซเชียล -->
@@ -13,13 +13,13 @@
   <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg">
   <meta property="og:url" content="https://akkaraphon88.github.io/twgarage">
 
-  <!-- ไอคอนบนแท็บเบราว์เซอร์ -->
+  <!-- Favicon ไอคอนแท็บ -->
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <!-- โหลดฟอนต์ภาษาไทยจาก Google -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- ลิงก์ไปยัง CSS แยกภายนอก -->
+  <!-- CSS ภายนอก -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,11 +31,11 @@
     <a href="#pricing">อัตราค่าบริการ</a>
   </nav>
 
-  <!-- ภาพ Hero แสดงหน้าร้าน รองรับมือถือ/PC -->
+  <!-- Hero ภาพเปิดเว็บ -->
   <section class="hero">
     <picture>
       <source media="(max-width: 768px)" srcset="garage-mobile.png">
-      <img src="garage.jpg" alt="รูปหน้าร้าน TW Garage" loading="lazy">
+      <img src="garage.jpg" alt="รูปหน้าร้าน TW Garage">
     </picture>
     <div class="hero-overlay">
       <h1>TW Garage</h1>
@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <!-- คำอธิบาย + ปุ่มติดต่อ -->
+  <!-- คำอธิบาย และ ปุ่มติดต่อ -->
   <section class="description" id="contact">
     <p>ถ่ายน้ำมันเครื่อง, เปลี่ยนยาง, ช่วงล่าง, ระบบเบรก, แบตเตอรี่ และอื่นๆ ทั้งในและนอกสถานที่</p>
     <h2>TW Garage</h2>
@@ -53,31 +53,39 @@
     <a class="button" href="https://maps.app.goo.gl/eBQPr6KXKs6HfJDWA" target="_blank">🗺️ ดูแผนที่บน Google Maps</a>
   </section>
 
-  <!-- บริการที่มีในร้าน -->
-  <section class="gallery" id="gallery">
-    <h2>บริการ</h2>
-    <div class="service"><img src="sv-tire.png" alt="ยาง%" loading="lazy"><p>ยางใหม่ ยางเปอร์เซ็นต์</p></div>
-    <div class="service"><img src="sv-oil.png" alt="น้ำมันเครื่อง" loading="lazy"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
-    <div class="service"><img src="sv-tirecar.png" alt="ยางรถยนต์" loading="lazy"><p>ปะ เปลี่ยนยางรถยนต์</p></div>
-    <div class="service"><img src="sv-mototire.png" alt="ยางมอเตอร์ไซค์" loading="lazy"><p>ปะ เปลี่ยนยางมอเตอร์ไซค์</p></div>
-    <div class="service"><img src="sv-battery.png" alt="แบตเตอรี่" loading="lazy"><p>เปลี่ยนแบตเตอรี่</p></div>
-    <div class="service"><img src="sv-suspension.png" alt="ช่วงล่าง" loading="lazy"><p>เช็กช่วงล่าง</p></div>
-    <div class="service"><img src="sv-brake.png" alt="เบรก" loading="lazy"><p>ระบบเบรก</p></div>
-    <div class="service"><img src="sv-mag.png" alt="แม็ก" loading="lazy"><p>ล้อแม็ก</p></div>
+  <!-- บริการ -->
+  <section id="gallery">
+    <div class="section-header">
+      <h2>บริการ</h2>
+    </div>
+    <div class="gallery">
+      <div class="service"><img src="sv-tire.png" alt="ยาง%"><p>ยางใหม่ ยางเปอร์เซ็นต์</p></div>
+      <div class="service"><img src="sv-oil.png" alt="น้ำมันเครื่อง"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
+      <div class="service"><img src="sv-tirecar.png" alt="ยางรถยนต์"><p>ปะ เปลี่ยนยางรถยนต์</p></div>
+      <div class="service"><img src="sv-mototire.png" alt="ยางมอเตอร์ไซค์"><p>ปะ เปลี่ยนยางมอเตอร์ไซค์</p></div>
+      <div class="service"><img src="sv-battery.png" alt="แบตเตอรี่"><p>เปลี่ยนแบตเตอรี่</p></div>
+      <div class="service"><img src="sv-suspension.png" alt="ช่วงล่าง"><p>เช็กช่วงล่าง</p></div>
+      <div class="service"><img src="sv-brake.png" alt="เบรก"><p>ระบบเบรก</p></div>
+      <div class="service"><img src="sv-mag.png" alt="แม็ก"><p>ล้อแม็ก</p></div>
+    </div>
   </section>
 
-  <!-- อัตราค่าบริการเป็นภาพ -->
-  <section class="gallery" id="pricing">
-    <h2 style="font-size: 2.5em">อัตราค่าบริการ</h2>
-    <img src="pr-price.png" alt="สอบได้เลยครับทั้งแชทและโทร" loading="lazy">
+  <!-- อัตราค่าบริการ -->
+  <section id="pricing">
+    <div class="section-header">
+      <h2>อัตราค่าบริการ</h2>
+    </div>
+    <div class="gallery">
+      <img src="pr-price.png" alt="สอบได้เลยครับทั้งแชทและโทร">
+    </div>
   </section>
 
-  <!-- ส่วนท้ายเว็บ -->
+  <!-- Footer -->
   <footer>
     © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
   </footer>
 
-  <!-- JavaScript: คลิกภาพให้ขยายเต็มหน้าจอ -->
+  <!-- JavaScript: คลิกขยายภาพ -->
   <script>
     document.querySelectorAll('img').forEach(img => {
       img.addEventListener('click', () => {
