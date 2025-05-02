@@ -84,16 +84,65 @@
     <a class="button" href="https://maps.app.goo.gl/eBQPr6KXKs6HfJDWA" target="_blank">🗺️ Google Map TW Garage</a>
   </section>
 
-  <section class="gallery"> <!-- แสดงรูปบริการ -->
-    <img src="img1.png" alt="บริการ 1">
-    <img src="img2.png" alt="บริการ 2">
-    <img src="img3.png" alt="บริการ 3">
-    <img src="img4.png" alt="บริการ 4">
-    <img src="img5.png" alt="บริการ 5">
-    <img src="img6.png" alt="บริการ 6">
-    <img src="img6.png" alt="บริการ 7">
-    <img src="img6.png" alt="บริการ 8">
-  </section>
+<section class="gallery">
+  <div class="service">
+    <img src="img1.png" alt="ยาง%">
+    <p>ยางเปอร์เซ็นต์</p>
+  </div>
+  <div class="service">
+    <img src="img2.png" alt="เปลี่ยนน้ำมันเครื่อง">
+    <p>เปลี่ยนน้ำมันเครื่อง</p>
+  </div>
+  <div class="service">
+    <img src="img3.png" alt="เปลี่ยนยางรถยนต์">
+    <p>เปลี่ยนยางรถยนต์</p>
+  </div>
+  <div class="service">
+    <img src="img4.png" alt="แบตเตอรี่">
+    <p>เปลี่ยนแบตเตอรี่</p>
+  </div>
+  <div class="service">
+    <img src="img5.png" alt="ช่วงล่าง">
+    <p>เช็กช่วงล่าง</p>
+  </div>
+  <div class="service">
+    <img src="img6.png" alt="เปลี่ยนยางมอเตอร์ไซค์">
+    <p>เปลี่ยนยางมอเตอร์ไซค์</p>
+  </div>
+  <div class="service">
+    <img src="img7.png" alt="แม็ก">
+    <p>ล้อแม็ก</p>
+  </div>
+  <div class="service">
+    <img src="img8.png" alt="ระบบเบรก">
+    <p>ระบบเบรก</p>
+  </div>
+  
+.service {
+  width: 160px;
+  margin: 10px;
+  text-align: center;
+  background-color: #1e1e1e; /* พื้นหลังกล่อง */
+  padding: 10px;
+  border-radius: 10px; /* มุมกล่องโค้งมน */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* เงาลอย */
+  transition: transform 0.2s ease; /* ทำให้ลอยแบบนุ่มนวล */
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.4); /* เงาเขียว ๆ แบบแบรนด์ */
+  cursor: pointer;
+}
+
+.service p {
+  margin-top: 8px;
+  font-size: 0.95em;
+  color: #ddd;
+}
+
+</section>
+
 
   <footer>
     © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
