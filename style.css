@@ -1,16 +1,25 @@
-/* ========= TW Garage Style.css ========= */
+/* ========= TW Garage - style.css (ฉบับสมบูรณ์) ========= */
 
-/* ใช้ฟอนต์ Prompt จาก Google Fonts */
+/* ---------- 1. พื้นฐานฟอนต์และธีม ---------- */
+:root {
+  --main-red: #ff3333;
+  --hover-red: #ff5555;
+  --shadow-yellow: rgba(255, 255, 0, 0.3);
+  --bg-dark: #121212;
+  --text-light: #ffffff;
+  --text-muted: #aaa;
+}
+
 body {
   margin: 0;
   font-family: 'Prompt', sans-serif;
-  background-color: #121212;
-  color: white;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* เมนูนำทางด้านบน (Sticky Navbar) */
+/* ---------- 2. เมนูด้านบน (Navbar Sticky) ---------- */
 .navbar {
   background-color: #1e1e1e;
   padding: 10px;
@@ -20,31 +29,35 @@ body {
   z-index: 10;
   box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
 }
+
 .navbar a {
-  color: white;
+  color: var(--text-light);
   text-decoration: none;
   margin: 0 15px;
   font-weight: 600;
   transition: color 0.3s;
 }
+
 .navbar a:hover {
-  color: #ff5555;
+  color: var(--hover-red);
 }
 
-/* ส่วน hero ที่ใช้ <picture> */
+/* ---------- 3. Hero Section พร้อมรูปพื้นหลัง ---------- */
 .hero {
   position: relative;
   text-align: center;
   overflow: hidden;
   height: 60vh;
 }
+
 .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px #ff0000);
+  filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px var(--main-red));
   animation: fadein 1.5s ease-out;
 }
+
 .hero-overlay {
   position: absolute;
   bottom: 20px;
@@ -56,21 +69,23 @@ body {
   max-width: 800px;
   animation: slideup 1s ease-out;
 }
+
 .hero h1 {
   font-size: 2.5em;
   margin: 0 0 10px;
   text-shadow: 0 0 8px red;
 }
+
 .hero p {
   font-size: 1.1em;
   line-height: 1.6;
 }
 
-/* ปุ่มลิงก์ต่าง ๆ */
+/* ---------- 4. ปุ่มติดต่อ ---------- */
 .button {
   display: block;
-  background-color: #ff3333;
-  color: white;
+  background-color: var(--main-red);
+  color: var(--text-light);
   padding: 14px 20px;
   margin: 10px auto;
   text-decoration: none;
@@ -79,14 +94,15 @@ body {
   font-size: 1.1em;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 255, 0, 0.2);
+  box-shadow: 0 4px 10px var(--shadow-yellow);
 }
+
 .button:hover {
   box-shadow: 0 8px 16px rgba(255, 0, 0, 0.6);
   transform: translateY(-4px);
 }
 
-/* ส่วนคำอธิบายกลางเว็บ */
+/* ---------- 5. คำอธิบายกลางหน้า ---------- */
 .description {
   padding: 30px 20px;
   max-width: 800px;
@@ -94,15 +110,19 @@ body {
   text-align: center;
 }
 
-/* หัวข้อส่วนต่าง ๆ */
+/* ---------- 6. หัวข้อส่วนต่าง ๆ (บริการ/อัตราค่าบริการ) ---------- */
+.section-header,
 h2 {
+  width: 100%;
   text-align: center;
   font-size: 2em;
-  margin-bottom: 10px;
-  text-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+  font-weight: bold;
+  margin: 40px auto 20px;
+  text-shadow: 0 0 10px red;
+  color: var(--text-light);
 }
 
-/* แกลเลอรีบริการ */
+/* ---------- 7. แกลเลอรีบริการ ---------- */
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -110,6 +130,7 @@ h2 {
   gap: 24px;
   padding: 20px;
 }
+
 .service {
   background-color: #1e1e1e;
   padding: 10px;
@@ -120,10 +141,12 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadein 0.8s ease;
 }
+
 .service:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(255, 255, 0, 0.5);
 }
+
 .service img {
   width: 100%;
   max-width: 150px;
@@ -132,13 +155,19 @@ h2 {
   cursor: pointer;
   transition: 0.3s;
 }
+
+.service img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px yellow);
+}
+
 .service p {
   margin-top: 10px;
   font-size: 1em;
   color: #ddd;
 }
 
-/* อัตราค่าบริการ */
+/* ---------- 8. อัตราค่าบริการ ---------- */
 #pricing img {
   width: 50vw;
   max-width: 500px;
@@ -148,30 +177,48 @@ h2 {
   box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
 }
 
-/* ส่วนท้าย */
+/* ---------- 9. ส่วนท้ายเว็บ ---------- */
 footer {
   padding: 20px;
-  color: #aaa;
+  color: var(--text-muted);
   font-size: 0.9em;
   text-align: center;
   background: #1e1e1e;
   box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.3);
 }
 
-/* แอนิเมชัน fade-in & slide-up */
+/* ---------- 10. แอนิเมชัน ---------- */
 @keyframes fadein {
-  from { opacity: 0; transform: scale(1.05); }
+  from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
 @keyframes slideup {
-  from { opacity: 0; transform: translateY(30px); }
+  from { opacity: 0; transform: translateY(50px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ปรับสำหรับมือถือ */
+/* ---------- 11. รองรับมือถือ ---------- */
 @media (max-width: 768px) {
-  .service { width: 90%; }
-  #pricing img { width: 90vw; }
-  .hero-overlay { padding: 15px; font-size: 0.95em; }
-  .button { max-width: 90%; }
+  .service {
+    width: 90%;
+  }
+  #pricing img {
+    width: 90vw;
+  }
+  .hero-overlay {
+    padding: 15px;
+    font-size: 0.95em;
+  }
+  .button {
+    max-width: 90%;
+  }
+}
+
+/* ---------- 12. รองรับ Dark Mode อัตโนมัติ (อนาคต) ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-dark);
+    color: var(--text-light);
+  }
 }
