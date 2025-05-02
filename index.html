@@ -35,7 +35,8 @@
   <section class="hero">
     <picture>
       <source media="(max-width: 768px)" srcset="garage-mobile.jpg">
-      <img src="garage.jpg" alt="หน้าร้าน TW Garage" class="lazyload">
+      <!-- ปรับแก้เพื่อให้โหลดภาพทันที ไม่ใช้ lazyload ที่ทำให้ไม่แสดง -->
+      <img src="garage.jpg" alt="หน้าร้าน TW Garage">
     </picture>
     <div class="hero-overlay">
       <h1>TW Garage</h1>
@@ -50,42 +51,31 @@
     <a class="button" href="tel:0918359456">📞 โทรเลย 091-8359-456</a>
     <a class="button" href="https://lin.ee/ACQTyay" target="_blank">💬 แชทสอบถาม LineOA</a>
     <a class="button" href="https://facebook.com/thanawat.worakleep" target="_blank">📘 Facebook</a>
-    <a class="button" href="#map">🗺️ ดูแผนที่ร้าน</a>
     <a class="button" href="https://lin.ee/ACQTyay" target="_blank">📅 จองคิวผ่าน Line</a>
   </section>
 
   <!-- บริการของทางร้านแบบไอคอนพร้อมข้อความ -->
   <section class="gallery" id="gallery">
     <h2>บริการ</h2>
-    <div class="service"><img src="sv-tire.png" alt="ยาง%" class="lazyload"><p>ยางใหม่ / ยางเปอร์เซ็นต์</p></div>
-    <div class="service"><img src="sv-oil.png" alt="น้ำมันเครื่อง" class="lazyload"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
-    <div class="service"><img src="sv-tirecar.png" alt="ยางรถยนต์" class="lazyload"><p>ปะ / เปลี่ยนยางรถยนต์</p></div>
-    <div class="service"><img src="sv-mototire.png" alt="ยางมอเตอร์ไซค์" class="lazyload"><p>เปลี่ยนยางมอเตอร์ไซค์</p></div>
-    <div class="service"><img src="sv-battery.png" alt="แบตเตอรี่" class="lazyload"><p>เปลี่ยนแบตเตอรี่</p></div>
-    <div class="service"><img src="sv-suspension.png" alt="ช่วงล่าง" class="lazyload"><p>ตรวจเช็กช่วงล่าง</p></div>
-    <div class="service"><img src="sv-brake.png" alt="ระบบเบรก" class="lazyload"><p>ระบบเบรก</p></div>
-    <div class="service"><img src="sv-mag.png" alt="ล้อแม็ก" class="lazyload"><p>ล้อแม็ก</p></div>
+    <div class="service"><img src="sv-tire.png" alt="ยาง%"><p>ยางใหม่ / ยางเปอร์เซ็นต์</p></div>
+    <div class="service"><img src="sv-oil.png" alt="น้ำมันเครื่อง"><p>เปลี่ยนน้ำมันเครื่อง</p></div>
+    <div class="service"><img src="sv-tirecar.png" alt="ยางรถยนต์"><p>ปะ / เปลี่ยนยางรถยนต์</p></div>
+    <div class="service"><img src="sv-mototire.png" alt="ยางมอเตอร์ไซค์"><p>เปลี่ยนยางมอเตอร์ไซค์</p></div>
+    <div class="service"><img src="sv-battery.png" alt="แบตเตอรี่"><p>เปลี่ยนแบตเตอรี่</p></div>
+    <div class="service"><img src="sv-suspension.png" alt="ช่วงล่าง"><p>ตรวจเช็กช่วงล่าง</p></div>
+    <div class="service"><img src="sv-brake.png" alt="ระบบเบรก"><p>ระบบเบรก</p></div>
+    <div class="service"><img src="sv-mag.png" alt="ล้อแม็ก"><p>ล้อแม็ก</p></div>
   </section>
 
-  <!-- ส่วนรีวิวจากลูกค้า -->
-  <section class="testimonials">
-    <h2>รีวิวจากลูกค้า</h2>
-    <blockquote>“บริการดีมาก เปลี่ยนยางไว ราคายุติธรรม” - คุณนนท์</blockquote>
-    <blockquote>“ร้านสะอาด บริการไว ช่างมีความรู้ดีมากครับ” - คุณอั้ม</blockquote>
-    <blockquote>“ใช้บริการหลายครั้งแล้ว ประทับใจเสมอ” - คุณเบียร์</blockquote>
-  </section>
+  <!-- ลบ testimonials เพราะไม่ได้เชื่อมกับ Google จริง -->
 
   <!-- อัตราค่าบริการแบบรูปภาพ -->
   <section class="gallery" id="pricing">
     <h2>อัตราค่าบริการ</h2>
-    <img src="pr-price.png" alt="ราคาบริการ" class="lazyload">
+    <img src="pr-price.png" alt="ราคาบริการ">
   </section>
 
-  <!-- ฝัง Google Maps -->
-  <section class="map" id="map">
-    <h2>แผนที่ร้าน</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!..." width="100%" height="300" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
+  <!-- ลบ Google Map ฝัง เพราะลิงก์ pb ผิด ไม่ทำงาน -->
 
   <!-- ส่วนท้ายเว็บ -->
   <footer>
