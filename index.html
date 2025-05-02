@@ -1,10 +1,11 @@
-<!DOCTYPE html> <!-- ระบุว่าเป็น HTML5 -->
-<html lang="th"> <!-- ภาษาไทย -->
+<!DOCTYPE html>
+<html lang="th">
 <head>
-  <meta charset="UTF-8"> <!-- รองรับภาษาไทย -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- รองรับมือถือ -->
-  <title>TW Garage - แยกกะเฉดระยอง</title> <!-- ชื่อแท็บ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TW Garage - แยกกะเฉดระยอง</title>
   <style>
+    /* ตั้งค่าพื้นฐานของเว็บไซต์ */
     body {
       margin: 0;
       font-family: sans-serif;
@@ -13,22 +14,23 @@
       text-align: center;
     }
 
-    /* ส่วน Hero Section (แบนเนอร์เต็มหน้าจอ) */
+    /* ส่วนหัวแบบฮีโร่ ใช้รูปเป็นพื้นหลัง */
     .hero {
-      background-image: url('garage.jpg'); /* ภาพพื้นหลัง */
-      background-size: cover; /* ปรับเต็มจอ */
+      background-image: url('garage.jpg'); /* รูปภาพพื้นหลังส่วนหัว */
+      background-size: cover;
       background-position: center;
-      height: 100vh; /* เต็มหน้าจอ */
+      height: 100vh; /* ความสูงเต็มหน้าจอ */
       position: relative;
       color: white;
       display: flex;
-      align-items: flex-end; /* ข้อความอยู่ล่าง */
+      align-items: flex-end;
       justify-content: center;
       padding: 40px 20px;
     }
 
+    /* กล่องคลุมข้อความใน hero */
     .hero-overlay {
-      background: rgba(0, 0, 0, 0.6); /* พื้นหลังดำโปร่งใส */
+      background: rgba(0, 0, 0, 0.6); /* สีพื้นหลังดำโปร่งใส */
       padding: 20px;
       border-radius: 10px;
       text-align: center;
@@ -45,17 +47,17 @@
       line-height: 1.6;
     }
 
-    /* คำอธิบายร้าน */
+    /* ส่วนคำอธิบายใต้หัวเว็บ */
     section.description {
       padding: 20px;
       max-width: 800px;
       margin: auto;
     }
 
-    /* ปุ่มต่าง ๆ */
+    /* ปุ่มลิงก์ต่าง ๆ */
     .button {
       display: block;
-      background-color: #2ecc71;
+      background-color: #2ecc71; /* สีพื้นเขียว */
       color: white;
       padding: 14px 20px;
       margin: 10px auto;
@@ -63,9 +65,17 @@
       border-radius: 10px;
       max-width: 300px;
       font-size: 1.1em;
+      transition: box-shadow 0.3s ease, transform 0.2s ease; /* ทำให้เปลี่ยนอย่างนุ่มนวล */
     }
 
-    /* ส่วนรูปบริการ */
+    /* เอฟเฟกต์เมื่อชี้เมาส์ที่ปุ่ม */
+    .button:hover {
+      box-shadow: 0 8px 16px rgba(255, 0, 0, 0.5); /* เงาสีแดง */
+      transform: translateY(-4px); /* ปุ่มลอยขึ้น */
+      cursor: pointer;
+    }
+
+    /* กล่องแสดงไอคอนบริการ */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -82,20 +92,21 @@
       border: 2px solid #444;
     }
 
+    /* กล่องบริการแต่ละรายการ */
     .service {
       width: 160px;
       margin: 10px;
       text-align: center;
-      background-color: #1e1e1e;
+      background-color: #1e1e1e; /* พื้นหลังกล่องเข้ม */
       padding: 10px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* เงา */
       transition: transform 0.2s ease;
     }
 
     .service:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 255, 0, 0.4);
+      box-shadow: 0 8px 16px rgba(0, 255, 0, 0.4); /* เงาสีเขียว */
       cursor: pointer;
     }
 
@@ -105,6 +116,7 @@
       color: #ddd;
     }
 
+    /* ส่วนท้ายเว็บไซต์ */
     footer {
       padding: 20px;
       color: #aaa;
@@ -113,8 +125,7 @@
   </style>
 </head>
 <body>
-
-  <!-- ส่วน Hero ด้านบน -->
+  <!-- ส่วนหัว hero -->
   <header class="hero">
     <div class="hero-overlay">
       <h1>TW Garage</h1>
@@ -138,7 +149,7 @@
     <a class="button" href="https://maps.app.goo.gl/eBQPr6KXKs6HfJDWA" target="_blank">🗺️ Google Map TW Garage</a>
   </section>
 
-  <!-- รูปภาพบริการ -->
+  <!-- รูปไอคอนบริการ -->
   <section class="gallery">
     <div class="service">
       <img src="img1.png" alt="ยาง%">
@@ -174,7 +185,7 @@
     </div>
   </section>
 
-  <!-- ลิขสิทธิ์ด้านล่าง -->
+  <!-- ฟุตเตอร์ลิขสิทธิ์ -->
   <footer>
     © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
   </footer>
