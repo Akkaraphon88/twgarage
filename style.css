@@ -1,33 +1,34 @@
-/* ========= TW Garage - style.css (เวอร์ชันดีที่สุด พร้อมคำอธิบายละเอียด) ========= */
+/* ========= TW Garage - style.css (ฉบับสมบูรณ์ที่สุด) ========= */
 
-/* ---------- 1. ตัวแปรสีหลัก ใช้สำหรับเปลี่ยนธีมง่าย ---------- */
+/* ---------- 1. ตัวแปร CSS :root ใช้แทนค่าสี / ขนาด ---------- */
 :root {
-  --main-red: #ff3333;             /* สีแดงหลักของแบรนด์ */
-  --hover-red: #ff5555;            /* สีแดงเมื่อ hover */
-  --dark-bg: #121212;              /* สีพื้นหลังเข้ม */
-  --light-text: #ffffff;           /* สีข้อความทั่วไป */
-  --muted-text: #aaa;              /* สีข้อความรอง */
-  --shadow-yellow: rgba(255, 255, 0, 0.3); /* เงาสีเหลือง */
+  --main-red: #ff3333; /* สีแดงหลัก */
+  --hover-red: #ff5555; /* สีแดงตอน hover */
+  --bg-dark: #121212; /* พื้นหลังเข้ม */
+  --light-text: #ffffff; /* ข้อความสีอ่อน */
+  --muted-text: #aaa; /* ข้อความรอง */
+  --shadow-yellow: rgba(255, 255, 0, 0.3); /* เงาเหลือง */
+  --card-radius: 12px; /* มุมโค้งของกล่อง */
 }
 
-/* ---------- 2. พื้นฐานเว็บ ---------- */
+/* ---------- 2. พื้นฐานของ body ---------- */
 body {
   margin: 0;
-  font-family: 'Prompt', sans-serif;
-  background-color: var(--dark-bg);
+  font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Google ภาษาไทย */
+  background-color: var(--bg-dark);
   color: var(--light-text);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-/* ---------- 3. เมนูด้านบน (Sticky Navbar) ---------- */
+/* ---------- 3. เมนูด้านบนแบบ Sticky ---------- */
 .navbar {
   background-color: #1e1e1e;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
 }
 
@@ -36,14 +37,14 @@ body {
   text-decoration: none;
   margin: 0 15px;
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
   color: var(--hover-red);
 }
 
-/* ---------- 4. Hero Section พร้อมภาพพื้นหลัง ---------- */
+/* ---------- 4. Hero Section ---------- */
 .hero {
   position: relative;
   text-align: center;
@@ -66,7 +67,7 @@ body {
   transform: translateX(-50%);
   background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(30,30,30,0.9));
   padding: 20px;
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   max-width: 800px;
   animation: slideup 1s ease-out;
 }
@@ -82,7 +83,7 @@ body {
   line-height: 1.6;
 }
 
-/* ---------- 5. ปุ่มเรียกใช้งานต่าง ๆ ---------- */
+/* ---------- 5. ปุ่มต่าง ๆ ---------- */
 .button {
   display: block;
   background-color: var(--main-red);
@@ -90,7 +91,7 @@ body {
   padding: 14px 20px;
   margin: 10px auto;
   text-decoration: none;
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   max-width: 300px;
   font-size: 1.1em;
   font-weight: 500;
@@ -103,7 +104,7 @@ body {
   transform: translateY(-4px);
 }
 
-/* ---------- 6. กล่องคำอธิบายกลางหน้า ---------- */
+/* ---------- 6. คำอธิบายกลางหน้า ---------- */
 .description {
   padding: 30px 20px;
   max-width: 800px;
@@ -111,7 +112,8 @@ body {
   text-align: center;
 }
 
-/* ---------- 7. หัวข้อกลางหน้า ---------- */
+/* ---------- 7. หัวข้อหลัก ---------- */
+.section-header,
 h2 {
   width: 100%;
   text-align: center;
@@ -134,7 +136,7 @@ h2 {
 .service {
   background-color: #1e1e1e;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: var(--card-radius);
   text-align: center;
   width: 45%;
   box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
@@ -151,7 +153,7 @@ h2 {
   width: 100%;
   max-width: 150px;
   height: auto;
-  border-radius: 10px;
+  border-radius: var(--card-radius);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -172,38 +174,12 @@ h2 {
   width: 50vw;
   max-width: 500px;
   height: auto;
-  border-radius: 15px;
+  border-radius: var(--card-radius);
   cursor: pointer;
   box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
 }
 
-/* ---------- 10. กล่องรีวิวจากลูกค้า ---------- */
-.testimonials {
-  background-color: #1a1a1a;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.testimonials blockquote {
-  font-style: italic;
-  font-size: 1.1em;
-  margin: 10px auto;
-  color: #ddd;
-  max-width: 600px;
-  border-left: 4px solid var(--main-red);
-  padding-left: 15px;
-}
-
-/* ---------- 11. ฝัง Google Map ---------- */
-.map iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
-  border-radius: 12px;
-}
-
-/* ---------- 12. ส่วนท้ายเว็บ ---------- */
+/* ---------- 10. ส่วนท้าย ---------- */
 footer {
   padding: 20px;
   color: var(--muted-text);
@@ -213,17 +189,7 @@ footer {
   box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.3);
 }
 
-/* ---------- 13. Lazyload Class สำหรับภาพโหลดเฉพาะเมื่อแสดง ---------- */
-.lazyload {
-  opacity: 0;
-  transition: opacity 0.6s ease-in-out;
-}
-
-.lazyload[loading] {
-  opacity: 1;
-}
-
-/* ---------- 14. Animation ---------- */
+/* ---------- 11. แอนิเมชัน ---------- */
 @keyframes fadein {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
@@ -234,27 +200,44 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---------- 15. Responsive Design ---------- */
+/* ---------- 12. รองรับหน้าจอเล็ก (มือถือ) ---------- */
 @media (max-width: 768px) {
   .service {
     width: 90%;
   }
+
   #pricing img {
     width: 90vw;
   }
+
   .hero-overlay {
     padding: 15px;
     font-size: 0.95em;
   }
+
   .button {
     max-width: 90%;
   }
 }
 
-/* ---------- 16. Dark Mode (รองรับอนาคต) ---------- */
-@media (prefers-color-scheme: dark) {
+/* ---------- 13. รองรับโหมดแสง (Light Mode) ---------- */
+@media (prefers-color-scheme: light) {
   body {
-    background-color: var(--dark-bg);
-    color: var(--light-text);
+    background-color: #f9f9f9;
+    color: #111;
+  }
+
+  .navbar, .service, footer {
+    background-color: #ffffff;
+    color: #111;
+  }
+
+  .service p {
+    color: #222;
+  }
+
+  .hero-overlay {
+    background: rgba(255,255,255,0.85);
+    color: #111;
   }
 }
