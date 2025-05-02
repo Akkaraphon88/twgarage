@@ -5,17 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TW Garage - แยกกะเฉดระยอง</title>
 
-  <!-- SEO เบื้องต้น -->
+  <!-- SEO เบื้องต้น และแชร์โซเชียล -->
   <meta name="description" content="ศูนย์บริการรถยนต์ระยอง TW Garage บริการยาง เปลี่ยนน้ำมันเครื่อง ช่วงล่าง แบตเตอรี่ และอื่น ๆ โทรเลย 091-8359-456">
   <meta name="keywords" content="อู่ซ่อมรถระยอง, TW Garage, ยาง, น้ำมันเครื่อง, เปลี่ยนยาง, รถยนต์, มอเตอร์ไซค์">
-
-  <!-- แชร์โซเชียล -->
   <meta property="og:title" content="TW Garage - ระยอง">
   <meta property="og:description" content="บริการรถยนต์ครบวงจร ยาง น้ำมันเครื่อง เบรก ช่วงล่าง โทร 091-8359-456">
   <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg">
   <meta property="og:url" content="https://akkaraphon88.github.io/twgarage">
 
   <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
     body {
       margin: 0;
@@ -49,10 +48,11 @@
       position: relative;
       text-align: center;
       overflow: hidden;
+      height: 60vh; /* จำกัดความสูง hero section สำหรับ desktop */
     }
     .hero img {
       width: 100%;
-      height: 100vh;
+      height: 100%;
       object-fit: cover;
       filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px #ff0000);
       animation: fadein 1.5s ease-out;
@@ -114,28 +114,28 @@
     h2 {
       text-align: center;
       font-size: 2em;
-      margin: 40px auto 10px;
+      margin-bottom: 10px;
     }
 
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      justify-items: center;
-      gap: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
     }
     .service {
       background-color: #1e1e1e;
       padding: 10px;
-      border-radius: 10px;
+      border-radius: 12px;
       text-align: center;
+      width: 45%;
       box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadein 0.8s ease;
     }
     .service:hover {
-      transform: scale(1.05);
+      transform: scale(1.03);
       box-shadow: 0 8px 20px rgba(255, 255, 0, 0.5);
     }
     .service img {
@@ -152,6 +152,15 @@
       color: #ddd;
     }
 
+    #pricing img {
+      width: 50vw; /* แสดงภาพอัตราค่าบริการใหญ่ขึ้น */
+      max-width: 500px;
+      height: auto;
+      border-radius: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255, 0, 0, 0.3);
+    }
+
     footer {
       padding: 20px;
       color: #aaa;
@@ -162,9 +171,8 @@
     }
 
     @media (max-width: 768px) {
-      .hero img { height: auto; }
-      .hero-overlay { padding: 15px; font-size: 0.95em; }
-      .button { max-width: 90%; }
+      .service { width: 90%; }
+      #pricing img { width: 90vw; }
     }
   </style>
 </head>
@@ -207,37 +215,37 @@
 
   <section class="gallery" id="pricing">
     <h2 style="font-size: 2.5em">อัตราค่าบริการ</h2>
-    <div class="service"><img src="pr-price.png" alt="ราคาตามรุ่นอุปกรณ์นั้น"><p>ราคาตามรุ่นอุปกรณ์นั้น</p></div>
+    <img src="pr-price.png" alt="ราคาตามรุ่นอุปกรณ์นั้น">
   </section>
 
   <footer>
     © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
   </footer>
 
-  <!-- สคริปต์เปิดภาพแบบเต็มจอเมื่อคลิก -->
+  <!-- ฟังก์ชันแสดงภาพขยายแบบเต็มจอ -->
   <script>
-    document.querySelectorAll('.service img').forEach(img => {
+    document.querySelectorAll('img').forEach(img => {
       img.addEventListener('click', () => {
-        const full = document.createElement('div');
-        full.style.position = 'fixed';
-        full.style.top = 0;
-        full.style.left = 0;
-        full.style.width = '100vw';
-        full.style.height = '100vh';
-        full.style.background = 'rgba(0,0,0,0.9)';
-        full.style.display = 'flex';
-        full.style.justifyContent = 'center';
-        full.style.alignItems = 'center';
-        full.style.zIndex = 1000;
-        const big = document.createElement('img');
-        big.src = img.src;
-        big.style.maxWidth = '90vw';
-        big.style.maxHeight = '90vh';
-        big.style.borderRadius = '15px';
-        big.style.boxShadow = '0 0 25px red';
-        full.appendChild(big);
-        full.onclick = () => full.remove();
-        document.body.appendChild(full);
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.9)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = 9999;
+        const bigImg = document.createElement('img');
+        bigImg.src = img.src;
+        bigImg.style.maxWidth = '90%';
+        bigImg.style.maxHeight = '90%';
+        bigImg.style.borderRadius = '15px';
+        bigImg.style.boxShadow = '0 0 25px red';
+        overlay.appendChild(bigImg);
+        overlay.onclick = () => overlay.remove();
+        document.body.appendChild(overlay);
       });
     });
   </script>
