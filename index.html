@@ -15,10 +15,7 @@
   <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg">
   <meta property="og:url" content="https://akkaraphon88.github.io/twgarage">
 
-  <!-- Favicon ไอคอนหน้าเว็บ -->
   <link rel="icon" type="image/png" href="favicon.png">
-
-  <!-- ใส่ไฟล์ CSS ภายนอกหากมี: <link rel="stylesheet" href="style.css"> -->
   <style>
     body {
       margin: 0;
@@ -55,7 +52,7 @@
     }
     .hero img {
       width: 100%;
-      max-height: 60vh;
+      height: 100vh;
       object-fit: cover;
       filter: brightness(85%) contrast(105%) drop-shadow(0 0 10px #ff0000);
       animation: fadein 1.5s ease-out;
@@ -117,15 +114,17 @@
     h2 {
       text-align: center;
       font-size: 2em;
-      margin-bottom: 10px;
+      margin: 40px auto 10px;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       justify-items: center;
       gap: 20px;
       padding: 20px;
+      max-width: 1200px;
+      margin: auto;
     }
     .service {
       background-color: #1e1e1e;
@@ -148,7 +147,7 @@
       transition: 0.3s;
     }
     .service p {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 1em;
       color: #ddd;
     }
@@ -163,6 +162,7 @@
     }
 
     @media (max-width: 768px) {
+      .hero img { height: auto; }
       .hero-overlay { padding: 15px; font-size: 0.95em; }
       .button { max-width: 90%; }
     }
