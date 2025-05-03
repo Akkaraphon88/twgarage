@@ -1,4 +1,4 @@
- /* ========= TW Garage - style.css (ฉบับสมบูรณ์ที่สุด) ========= */
+/* ========= TW Garage - style.css (ฉบับสมบูรณ์ที่สุด) ========= */
 
 /* ---------- 1. ตัวแปร CSS :root ใช้แทนค่าสี / ขนาด ---------- */
 :root {
@@ -246,25 +246,21 @@ footer {
 }
 
 /* ---------- 1. ตำแหน่งล้อ ---------- */
-/* ----------- CSS สำหรับล้อหมุน --------------- */
 .wheel-container {
-  position: fixed; /* ใช้ fixed เพื่อให้ตำแหน่งล้อคงที่ */
-  bottom: 5%; /* ห่างจากพื้น 5% */
-  right: 5%; /* ห่างจากขวา 5% */
+  position: fixed; /* ใช้ fixed เพื่อให้ล้ออยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
+  bottom: 5px; /* ระยะห่างจากด้านล่าง */
+  right: 5px; /* ระยะห่างจากด้านขวา */
   z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
 }
 
 .wheel {
-  width: 60px; /* ขนาดล้อ */
-  height: 60px; /* ขนาดล้อ */
-  border-radius: 50%; /* ให้ล้อเป็นวงกลม */
-  background-color: #333; /* สีพื้นหลังของล้อ */
-  border: 4px solid #ff3333; /* ขอบสีแดงให้ดูหรู */
-  transition: transform 0.3s ease; /* เพิ่มแอนิเมชันการหมุน */
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5); /* เพิ่มเงาให้ล้อ */
+  width: 40px; /* ขนาดล้อ */
+  height: auto;
+  transition: transform 0.3s ease;
+  will-change: transform; /* ให้เบราว์เซอร์เตรียมพร้อมสำหรับการเปลี่ยนแปลงการหมุน */
 }
 
-/* เพิ่มแอนิเมชันการหมุน */
+/* หมุนล้อโดยใช้การหมุนแบบต่อเนื่อง */
 @keyframes rotateWheel {
   from {
     transform: rotate(0deg);
@@ -272,9 +268,4 @@ footer {
   to {
     transform: rotate(360deg);
   }
-}
-
-.wheel {
-  animation: rotateWheel 5s linear infinite; /* หมุนอย่างราบรื่น */
-  transform-origin: center; /* หมุนจากกลางล้อ */
-}
+} 
