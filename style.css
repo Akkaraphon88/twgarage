@@ -259,7 +259,6 @@ footer {
   width: 100px; /* ขนาดล้อ */
   height: auto;
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5); /* เพิ่มเงาให้ล้อ */
 }
 
 
