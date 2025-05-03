@@ -88,13 +88,7 @@
   <section class="wheel-container">
     <img src="Wheel.png" alt="Wheel" class="wheel">
   </section>
-  
-  <!-- ส่วนท้ายเว็บ -->
-  <footer>
-    © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
-  </footer>
-
-  <!-- สคริปต์: คลิกภาพเพื่อดูขยายเต็มจอ -->
+    <!-- สคริปต์: คลิกภาพเพื่อดูขยายเต็มจอ -->
   <script>
     document.querySelectorAll('img').forEach(img => {
       img.addEventListener('click', () => {
@@ -119,7 +113,13 @@
 
         overlay.appendChild(bigImg);
         overlay.onclick = () => overlay.remove();
-        document.body.appendChild(overlay);
+        document.body.appendChild(overlay)
+        </section>
+                           
+  <!-- ส่วนท้ายเว็บ -->
+  <footer>
+    © 2025 TW Garage แยกกะเฉดระยอง. สงวนสิทธิ์ทุกประการ.
+  </footer>
       });
     });
 </body>
