@@ -3,8 +3,8 @@ window.addEventListener('scroll', function() {
   const wheel = document.querySelector('.wheel');
   const scrollPosition = window.scrollY;
 
-  // คำนวณการหมุนของล้อโดยใช้ความเร็วในการเลื่อนหน้าจอ
-  const rotation = scrollPosition / 10; // ปรับสัดส่วนนี้เพื่อเพิ่มหรือลดความเร็วในการหมุน
+  // ปรับการหมุน: ถ้าต้องการหมุนเร็วขึ้น ให้ปรับตัวเลขที่ / 10 (เช่น / 5 หมุนเร็วขึ้น)
+  const rotation = scrollPosition / 5; // เพิ่มความเร็วในการหมุน
 
   // เปลี่ยนการหมุนของล้อให้ตรงกับการเลื่อนหน้า
   wheel.style.transform = `rotate(${rotation}deg)`;
