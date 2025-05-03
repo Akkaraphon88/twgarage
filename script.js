@@ -6,8 +6,8 @@ window.addEventListener('scroll', function() {
 
   // ถ้าล้อเข้ามาในหน้าจอ (เลื่อนถึง)
   if (wheelPosition <= window.innerHeight * 0.8) {
-    wheel.classList.add('is-visible');
+    wheel.classList.add('is-visible'); // เพิ่มคลาสที่ทำให้ล้อหมุน
   } else {
-    wheel.classList.remove('is-visible');
+    wheel.classList.remove('is-visible'); // ลบคลาสหากล้อไม่ได้อยู่ในหน้าจอ
   }
 });
