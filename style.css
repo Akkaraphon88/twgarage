@@ -52,7 +52,12 @@ body {
   position: relative;
   text-align: center;
   overflow: hidden;
-  height: 60vh;
+  height: 60vh; /* สำหรับเดสก์ท็อป */
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 40vh; /* ปรับเฉพาะมือถือ */
+  }
 }
 
 .hero img {
@@ -72,7 +77,7 @@ body {
   padding: 20px;
   border-radius: var(--card-radius);
   max-width: 800px;
-  animation: zoomCenter3D 1s ease-out;
+  animation: zoomIn3D 1.2s ease-out;
   backface-visibility: hidden;
   will-change: transform, opacity;
 }
