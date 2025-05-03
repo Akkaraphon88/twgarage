@@ -9,16 +9,19 @@
   --muted-text: #aaa; /* ข้อความรอง */
   --shadow-yellow: rgba(255, 255, 0, 0.3); /* เงาเหลือง */
   --card-radius: 12px; /* มุมโค้งของกล่อง */
+  --main-font: 'Prompt', sans-serif; /* ฟอนต์หลัก */
+  --font-size-base: 1em; /* ขนาดฟอนต์มาตรฐาน */
+  --max-width: 1200px; /* ขนาดกว้างสูงสุดของเนื้อหา */
 }
 
 /* ---------- 2. พื้นฐานของ body ---------- */
 body {
   margin: 0;
-  font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Google ภาษาไทย */
+  font-family: var(--main-font); /* ใช้ฟอนต์จากตัวแปร */
   background-color: var(--bg-dark);
   color: var(--light-text);
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* เลื่อนเนียน ๆ */
 }
 
 /* ---------- 3. เมนูด้านบนแบบ Sticky ---------- */
@@ -41,7 +44,7 @@ body {
 }
 
 .navbar a:hover {
-  color: var(--hover-red);
+  color: var(--hover-red); /* เปลี่ยนสีเมื่อ hover */
 }
 
 /* ---------- 4. Hero Section ---------- */
@@ -93,7 +96,7 @@ body {
   text-decoration: none;
   border-radius: var(--card-radius);
   max-width: 300px;
-  font-size: 1.1em;
+  font-size: var(--font-size-base);
   font-weight: 500;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px var(--shadow-yellow);
@@ -107,7 +110,7 @@ body {
 /* ---------- 6. คำอธิบายกลางหน้า ---------- */
 .description {
   padding: 30px 20px;
-  max-width: 800px;
+  max-width: var(--max-width);
   margin: auto;
   text-align: center;
 }
@@ -203,11 +206,11 @@ footer {
 /* ---------- 12. รองรับหน้าจอเล็ก (มือถือ) ---------- */
 @media (max-width: 768px) {
   .service {
-    width: 90%;
+    width: 90%; /* เพิ่มขนาดของบริการเมื่อหน้าจอเล็กลง */
   }
 
   #pricing img {
-    width: 90vw;
+    width: 90vw; /* ปรับขนาดภาพเมื่อหน้าจอเล็ก */
   }
 
   .hero-overlay {
@@ -217,5 +220,27 @@ footer {
 
   .button {
     max-width: 90%;
+  }
+}
+
+/* ---------- 13. รองรับ Dark Mode (Automatic Theme) ---------- */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--bg-dark);
+    color: var(--light-text);
+  }
+
+  .navbar, .service, footer {
+    background-color: #1e1e1e;
+    color: var(--light-text);
+  }
+
+  .hero-overlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .button {
+    background-color: var(--main-red);
+    color: var(--light-text);
   }
 }
