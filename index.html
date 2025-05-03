@@ -28,7 +28,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- ลิงก์ไปยัง style.css แยกไฟล์ -->
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ----------- 3D Zoom-in Animation ----------- */
+    @keyframes zoomIn3D {
+      0% {
+        opacity: 0;
+        transform: perspective(800px) rotateX(-10deg) scale(0.8) translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: perspective(800px) rotateX(0deg) scale(1) translateY(0);
+      }
+    }
+
+    .zoom-in-3d {
+      animation: zoomIn3D 1.2s ease-out forwards;
+      backface-visibility: hidden;
+      will-change: transform, opacity;
+    }
+  </style>
 </head>
 <body>
   <!-- เมนูนำทางด้านบน -->
@@ -43,10 +63,10 @@
   <script src="script.js"></script>
   
   <!-- Hero Section พร้อมรูป responsive มือถือ+PC -->
-  <section class="hero">
+  <section class="hero zoom-in-3d"> <!-- ✅ เพิ่ม class zoom-in-3d -->
     <picture>
-      <source media="(max-width: 768px)" srcset="garage-mobile.png"> <!-- ใช้ภาพที่เหมาะสมกับมือถือ -->
-      <img src="garage.jpg" alt="หน้าร้าน TW Garage" loading="lazy"> <!-- ภาพหน้าร้านพร้อมการใช้ lazyload -->
+      <source media="(max-width: 768px)" srcset="garage-mobile.png">
+      <img src="garage.jpg" alt="หน้าร้าน TW Garage" loading="lazy">
     </picture>
     <div class="hero-overlay">
       <h1>TW Garage</h1>
