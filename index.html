@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TW Garage - แยกกะเฉดระยอง</title>
+  <meta charset="UTF-8"> <!-- กำหนดการเข้ารหัสเป็น UTF-8 เพื่อรองรับการแสดงผลภาษาไทย -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ทำให้เว็บไซต์รองรับการแสดงผลในอุปกรณ์มือถือ (Responsive) -->
+  <title>TW Garage - แยกกะเฉดระยอง</title> <!-- ชื่อเว็บไซต์ที่แสดงบนแท็บของเบราว์เซอร์ -->
 
   <!-- SEO และแชร์บนโซเชียล -->
-  <meta name="description" content="ศูนย์บริการรถยนต์ระยอง TW Garage บริการยาง เปลี่ยนน้ำมันเครื่อง ช่วงล่าง แบตเตอรี่ และอื่น ๆ โทรเลย 091-8359-456">
-  <meta name="keywords" content="อู่ซ่อมรถระยอง, TW Garage, ยาง, น้ำมันเครื่อง, เปลี่ยนยาง, รถยนต์, มอเตอร์ไซค์">
+  <meta name="description" content="ศูนย์บริการรถยนต์ระยอง TW Garage บริการยาง เปลี่ยนน้ำมันเครื่อง ช่วงล่าง แบตเตอรี่ และอื่น ๆ โทรเลย 091-8359-456"> <!-- คำอธิบายสำหรับ SEO -->
+  <meta name="keywords" content="อู่ซ่อมรถระยอง, TW Garage, ยาง, น้ำมันเครื่อง, เปลี่ยนยาง, รถยนต์, มอเตอร์ไซค์"> <!-- คีย์เวิร์ดสำหรับ SEO -->
+  <!-- Open Graph meta tags สำหรับการแชร์ใน Facebook -->
   <meta property="og:title" content="TW Garage - ระยอง">
   <meta property="og:description" content="บริการรถยนต์ครบวงจร ยาง น้ำมันเครื่อง เบรก ช่วงล่าง โทร 091-8359-456">
-  <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg">
-  <meta property="og:url" content="https://akkaraphon88.github.io/twgarage">
+  <meta property="og:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg"> <!-- รูปภาพที่จะแสดงเมื่อแชร์ -->
+  <meta property="og:url" content="https://akkaraphon88.github.io/twgarage"> <!-- ลิงก์เว็บไซต์ -->
+
+  <!-- สำหรับการแชร์ใน Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@your_twitter_handle">
+  <meta name="twitter:title" content="TW Garage - แยกกะเฉดระยอง">
+  <meta name="twitter:description" content="บริการครบวงจรจาก TW Garage">
+  <meta name="twitter:image" content="https://akkaraphon88.github.io/twgarage/garage.jpg"> <!-- รูปภาพที่จะแสดงเมื่อแชร์ใน Twitter -->
 
   <!-- ไอคอนแท็บเว็บ -->
   <link rel="icon" href="favicon.png" type="image/png">
@@ -24,19 +32,18 @@
 </head>
 <body>
   <!-- เมนูนำทางด้านบน -->
-  <nav class="navbar">
-    <a href="#">หน้าแรก</a>
-    <a href="#gallery">บริการ</a>
-    <a href="#contact">ติดต่อ</a>
-    <a href="#pricing">อัตราค่าบริการ</a>
+  <nav class="navbar" aria-label="เมนูนำทาง">
+    <a href="#" aria-label="กลับไปหน้าแรก">หน้าแรก</a>
+    <a href="#gallery" aria-label="ไปที่บริการ">บริการ</a>
+    <a href="#contact" aria-label="ไปที่ติดต่อ">ติดต่อ</a>
+    <a href="#pricing" aria-label="ไปที่อัตราค่าบริการ">อัตราค่าบริการ</a>
   </nav>
 
   <!-- Hero Section พร้อมรูป responsive มือถือ+PC -->
   <section class="hero">
     <picture>
-      <source media="(max-width: 768px)" srcset="garage-mobile.png">
-      <!-- ปรับแก้เพื่อให้โหลดภาพทันที ไม่ใช้ lazyload ที่ทำให้ไม่แสดง -->
-      <img src="garage.jpg" alt="หน้าร้าน TW Garage">
+      <source media="(max-width: 768px)" srcset="garage-mobile.png"> <!-- ใช้ภาพที่เหมาะสมกับมือถือ -->
+      <img src="garage.jpg" alt="หน้าร้าน TW Garage" loading="lazy"> <!-- ภาพหน้าร้านพร้อมการใช้ lazyload -->
     </picture>
     <div class="hero-overlay">
       <h1>TW Garage</h1>
@@ -48,10 +55,10 @@
   <section class="description" id="contact">
     <p>เปลี่ยนน้ำมันเครื่อง, เปลี่ยนยาง, ระบบเบรก, แบตเตอรี่, ช่วงล่าง และบริการอื่น ๆ</p>
     <h2>ติดต่อเรา</h2>
-    <a class="button" href="tel:0918359456">📞 โทรเลย 091-8359-456</a>
-    <a class="button" href="https://lin.ee/ACQTyay" target="_blank">💬 แชทสอบถาม LineOA</a>
-    <a class="button" href="https://facebook.com/thanawat.worakleep" target="_blank">📘 Facebook</a>
-    <a class="button" href="https://maps.app.goo.gl/tJnxPbmQKRQpg7qAA?g_st=il" target="_blank">🗺️Google Maps</a>
+    <a class="button" href="tel:0918359456" role="button" aria-label="โทรติดต่อ TW Garage">📞 โทรเลย 091-8359-456</a> <!-- ปุ่มโทร -->
+    <a class="button" href="https://lin.ee/ACQTyay" target="_blank" role="button" aria-label="แชทสอบถาม LineOA">💬 แชทสอบถาม LineOA</a> <!-- ปุ่มแชท -->
+    <a class="button" href="https://facebook.com/thanawat.worakleep" target="_blank" role="button" aria-label="Facebook ของ TW Garage">📘 Facebook</a>
+    <a class="button" href="https://maps.app.goo.gl/tJnxPbmQKRQpg7qAA?g_st=il" target="_blank" role="button" aria-label="ดูแผนที่ Google Maps">🗺️ Google Maps</a> <!-- ลิงก์ไปยัง Google Maps -->
   </section>
 
   <!-- บริการของทางร้านแบบไอคอนพร้อมข้อความ -->
@@ -67,15 +74,11 @@
     <div class="service"><img src="sv-mag.png" alt="ล้อแม็ก"><p>ล้อแม็ก</p></div>
   </section>
 
-  <!-- ลบ testimonials เพราะไม่ได้เชื่อมกับ Google จริง -->
-
   <!-- อัตราค่าบริการแบบรูปภาพ -->
   <section class="gallery" id="pricing">
     <h2>อัตราค่าบริการ</h2>
     <img src="pr-price.png" alt="ราคาบริการ">
   </section>
-
-  <!-- ลบ Google Map ฝัง เพราะลิงก์ pb ผิด ไม่ทำงาน -->
 
   <!-- ส่วนท้ายเว็บ -->
   <footer>
