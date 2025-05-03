@@ -6,6 +6,12 @@ window.addEventListener('scroll', function() {
   // ปรับการหมุน: ถ้าต้องการหมุนเร็วขึ้น ให้ปรับตัวเลขที่ / 10 (เช่น / 5 หมุนเร็วขึ้น)
   const rotation = scrollPosition / 5; // เพิ่มความเร็วในการหมุน
 
+    // คำนวณตำแหน่ง Y ของล้อขึ้นอยู่กับตำแหน่งการเลื่อน
+  const scrollPercentage = (scrollPosition / document.body.scrollHeight) * 100;
+
+  // ปรับตำแหน่งของล้อให้เคลื่อนไหวตามการเลื่อน
+  wheel.style.top = `${scrollPercentage}%`; // ให้ล้อขึ้นอยู่กับการเลื่อนของหน้า
+  
     // คำนวณตำแหน่งของล้อ
   const offsetY = scrollPosition / 5;  // ทำให้ล้อเคลื่อนที่ในทิศทาง Y ตามการเลื่อน
   wheel.style.transform = `rotate(${rotation}deg)`; // หมุนล้อ
