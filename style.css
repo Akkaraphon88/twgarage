@@ -256,7 +256,7 @@ footer {
 /* ---------- 1. ตำแหน่งล้อ ---------- */
 .wheel-container {
   position: fixed;
-  bottom: 10px;
+  bottom: 7px;
   right: 7px;
   z-index: 999;
 }
