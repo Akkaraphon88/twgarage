@@ -245,23 +245,21 @@ footer {
   }
 }
 
-/* ---------- 1. สไตล์หลักสำหรับล้อ ---------- */
-.wheels-container {
-  position: fixed; /* ใช้ fixed เพื่อให้ล้อแม็กอยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
-  right: 20px; /* กำหนดให้ล้ออยู่ที่ขวา */
-  bottom: 20px; /* กำหนดให้ล้ออยู่ที่ด้านล่าง */
-  width: 200px; /* ปรับขนาดล้อ */
-  z-index: 999; /* ให้ล้อแม็กอยู่เหนือองค์ประกอบอื่น */
+/* ---------- 1. ตำแหน่งล้อ ---------- */
+.wheel-container {
+  position: fixed; /* ใช้ fixed เพื่อให้ล้ออยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
+  bottom: 20px; /* ระยะห่างจากด้านล่าง */
+  right: 20px; /* ระยะห่างจากด้านขวา */
+  z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
 }
 
-.wheels img {
-  width: 100%;
-  max-width: 100px; /* ขนาดของล้อ */
+.wheel {
+  width: 100px; /* ขนาดล้อ */
   height: auto;
   transition: transform 0.3s ease;
 }
 
-/* ---------- 2. การหมุนของล้อ ---------- */
+/* ---------- 2. การหมุนล้อเมื่อเลื่อน ---------- */
 @keyframes rotateWheel {
   from {
     transform: rotate(0deg);
@@ -271,20 +269,7 @@ footer {
   }
 }
 
-.front-wheel, .back-wheel {
+.wheel.is-visible {
   animation: rotateWheel 1s linear infinite; /* หมุนล้อ */
 }
 
-/* ---------- 3. การเคลื่อนที่ของล้อแม็ก ---------- */
-@keyframes moveWheelsUpDown {
-  from {
-    transform: translateY(100vh); /* เคลื่อนที่จากด้านล่าง */
-  }
-  to {
-    transform: translateY(0); /* ให้ล้ออยู่ที่ตำแหน่งปกติ */
-  }
-}
-
-.wheels-container.is-visible .wheels {
-  animation: moveWheelsUpDown 1s ease-out forwards; /* ให้ล้อเคลื่อนที่ขึ้นเมื่อเลื่อนถึง */
-}
