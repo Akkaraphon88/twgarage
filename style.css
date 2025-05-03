@@ -244,3 +244,36 @@ footer {
     color: var(--light-text);
   }
 }
+
+/* ---------- 1. การหมุนล้อปกติ (เลื่อนลง) ---------- */
+@keyframes rotateWheelDown {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- 2. การหมุนล้อย้อนกลับ (เลื่อนขึ้น) ---------- */
+@keyframes rotateWheelUp {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg); /* หมุนย้อนกลับ */
+  }
+}
+
+/* ---------- 3. หมุนล้อหน้าและล้อหลัง ---------- */
+.wheels img {
+  animation: rotateWheelDown 1s linear infinite; /* หมุนล้อไปข้างหน้าเป็นค่าเริ่มต้น */
+}
+
+.front-wheel {
+  animation: rotateWheelDown 1s linear infinite;
+}
+
+.back-wheel {
+  animation: rotateWheelDown 1s linear infinite;
+}
