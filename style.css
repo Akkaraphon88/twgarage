@@ -54,6 +54,7 @@ body {
   overflow: hidden;
   height: 60vh; /* สำหรับเดสก์ท็อป */
 }
+
 @media (max-width: 768px) {
   .hero {
     height: 40vh; /* ปรับเฉพาะมือถือ */
@@ -77,11 +78,12 @@ body {
   padding: 20px;
   border-radius: var(--card-radius);
   max-width: 800px;
-  animation: zoomCenter3D 1.2s ease-out; /* ✅ ใช้ชื่อ keyframes ที่กำหนดไว้ */
+  animation: zoomCenter3D 1s ease-out;
   backface-visibility: hidden;
   will-change: transform, opacity;
 }
 
+/* ---------- แอนิเมชัน 3D ---------- */
 @keyframes zoomCenter3D {
   0% {
     opacity: 0;
@@ -91,17 +93,6 @@ body {
     opacity: 1;
     transform: perspective(800px) scale(1) rotateX(0deg);
   }
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  margin: 0 0 10px;
-  text-shadow: 0 0 8px red;
-}
-
-.hero p {
-  font-size: 1.1em;
-  line-height: 1.6;
 }
 
 /* ---------- 5. ปุ่มต่าง ๆ ---------- */
@@ -162,7 +153,6 @@ h2 {
   width: 45%;
   box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadein 0.8s ease;
 }
 
 .service:hover {
@@ -264,27 +254,24 @@ footer {
 }
 
 /* ---------- 1. ตำแหน่งล้อ ---------- */
-/* กำหนดตำแหน่งของล้อ */
 .wheel-container {
-  position: fixed; /* ใช้ fixed เพื่อให้ล้ออยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
-  bottom: 20px; /* ระยะห่างจากด้านล่าง */
-  right: 10px; /* ระยะห่างจากด้านขวา */
-  z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 999;
 }
 
-/* ปรับขนาดของล้อ */
 .wheel {
-  width: 70px; /* ขนาดล้อ */
+  width: 70px;
   height: auto;
-  object-fit: cover; /* ✅ ป้องกันภาพบิดเบี้ยว */
+  object-fit: cover;
   transition: transform 0.3s ease;
   will-change: transform;
-  border: none; /* ✅ ลบกรอบออก */
-  box-shadow: none; /* ✅ ไม่มีเงา ถ้าไม่ต้องการ */
+  border: none;
+  box-shadow: none;
 }
 
-
-/* หมุนล้อโดยใช้การหมุนแบบต่อเนื่อง */
+/* หมุนล้อ */
 @keyframes rotateWheel {
   from {
     transform: rotate(0deg);
