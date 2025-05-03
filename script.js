@@ -1,13 +1,13 @@
 window.addEventListener('scroll', function() {
-  const wheelsContainer = document.querySelector('.wheels-container');
+  const wheel = document.querySelector('.wheel');
 
-  // ตรวจสอบตำแหน่งของล้อบนหน้าจอ
-  const wheelsPosition = wheelsContainer.getBoundingClientRect().top;
+  // ตรวจสอบตำแหน่งของล้อ
+  const wheelPosition = wheel.getBoundingClientRect().top;
 
   // ถ้าล้อเข้ามาในหน้าจอ (เลื่อนถึง)
-  if (wheelsPosition <= window.innerHeight * 0.8) {
-    wheelsContainer.classList.add('is-visible');
+  if (wheelPosition <= window.innerHeight * 0.8) {
+    wheel.classList.add('is-visible');
   } else {
-    wheelsContainer.classList.remove('is-visible');
+    wheel.classList.remove('is-visible');
   }
 });
