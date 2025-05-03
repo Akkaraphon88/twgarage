@@ -72,11 +72,20 @@ body {
   padding: 20px;
   border-radius: var(--card-radius);
   max-width: 800px;
-
-  /* อนิเมชั่นใหม่ */
   animation: zoomCenter3D 1s ease-out;
   backface-visibility: hidden;
   will-change: transform, opacity;
+}
+
+@keyframes zoomCenter3D {
+  0% {
+    opacity: 0;
+    transform: perspective(800px) scale(0.8) rotateX(-10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) scale(1) rotateX(0deg);
+  }
 }
 
 .hero h1 {
@@ -277,16 +286,5 @@ footer {
   }
   to {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes zoomCenter3D {
-  0% {
-    opacity: 0;
-    transform: perspective(800px) scale(0.8) rotateX(-10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: perspective(800px) scale(1) rotateX(0deg);
   }
 }
