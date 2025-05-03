@@ -249,14 +249,14 @@ footer {
 /* กำหนดตำแหน่งของล้อ */
 .wheel-container {
   position: fixed; /* ใช้ fixed เพื่อให้ล้ออยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
-  bottom: 20px; /* ระยะห่างจากด้านล่าง */
+  bottom: 30px; /* ระยะห่างจากด้านล่าง */
   right: 20px; /* ระยะห่างจากด้านขวา */
   z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
 }
 
 /* ปรับขนาดของล้อ */
 .wheel {
-  width: 100px; /* ขนาดล้อ */
+  width: 70px; /* ขนาดล้อ */
   height: auto;
   object-fit: cover; /* ✅ ป้องกันภาพบิดเบี้ยว */
   transition: transform 0.3s ease;
