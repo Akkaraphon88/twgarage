@@ -245,8 +245,24 @@ footer {
   }
 }
 
-/* ---------- 1. การหมุนล้อปกติ (เลื่อนลง) ---------- */
-@keyframes rotateWheelDown {
+/* ---------- 1. สไตล์หลักสำหรับล้อ ---------- */
+.wheels-container {
+  position: fixed; /* ใช้ fixed เพื่อให้ล้อแม็กอยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
+  right: 20px; /* กำหนดให้ล้ออยู่ที่ขวา */
+  bottom: 20px; /* กำหนดให้ล้ออยู่ที่ด้านล่าง */
+  width: 200px; /* ปรับขนาดล้อ */
+  z-index: 999; /* ให้ล้อแม็กอยู่เหนือองค์ประกอบอื่น */
+}
+
+.wheels img {
+  width: 100%;
+  max-width: 100px; /* ขนาดของล้อ */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* ---------- 2. การหมุนของล้อ ---------- */
+@keyframes rotateWheel {
   from {
     transform: rotate(0deg);
   }
@@ -255,25 +271,20 @@ footer {
   }
 }
 
-/* ---------- 2. การหมุนล้อย้อนกลับ (เลื่อนขึ้น) ---------- */
-@keyframes rotateWheelUp {
+.front-wheel, .back-wheel {
+  animation: rotateWheel 1s linear infinite; /* หมุนล้อ */
+}
+
+/* ---------- 3. การเคลื่อนที่ของล้อแม็ก ---------- */
+@keyframes moveWheelsUpDown {
   from {
-    transform: rotate(0deg);
+    transform: translateY(100vh); /* เคลื่อนที่จากด้านล่าง */
   }
   to {
-    transform: rotate(-360deg); /* หมุนย้อนกลับ */
+    transform: translateY(0); /* ให้ล้ออยู่ที่ตำแหน่งปกติ */
   }
 }
 
-/* ---------- 3. หมุนล้อหน้าและล้อหลัง ---------- */
-.wheels img {
-  animation: rotateWheelDown 1s linear infinite; /* หมุนล้อไปข้างหน้าเป็นค่าเริ่มต้น */
-}
-
-.front-wheel {
-  animation: rotateWheelDown 1s linear infinite;
-}
-
-.back-wheel {
-  animation: rotateWheelDown 1s linear infinite;
+.wheels-container.is-visible .wheels {
+  animation: moveWheelsUpDown 1s ease-out forwards; /* ให้ล้อเคลื่อนที่ขึ้นเมื่อเลื่อนถึง */
 }
