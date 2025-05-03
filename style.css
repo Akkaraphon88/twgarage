@@ -248,18 +248,19 @@ footer {
 /* ---------- 1. ตำแหน่งล้อ ---------- */
 .wheel-container {
   position: fixed; /* ใช้ fixed เพื่อให้ล้ออยู่ที่ตำแหน่งเดิมเมื่อเลื่อน */
-  bottom: 10px; /* ระยะห่างจากด้านล่าง */
-  right: 10px; /* ระยะห่างจากด้านขวา */
+  bottom: 5px; /* ระยะห่างจากด้านล่าง */
+  right: 5px; /* ระยะห่างจากด้านขวา */
   z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
 }
 
 .wheel {
-  width: 50px; /* ขนาดล้อ */
+  width: 40px; /* ขนาดล้อ */
   height: auto;
   transition: transform 0.3s ease;
+  will-change: transform; /* ให้เบราว์เซอร์เตรียมพร้อมสำหรับการเปลี่ยนแปลงการหมุน */
 }
 
-/* ---------- 2. การหมุนล้อเมื่อเลื่อน ---------- */
+/* หมุนล้อโดยใช้การหมุนแบบต่อเนื่อง */
 @keyframes rotateWheel {
   from {
     transform: rotate(0deg);
@@ -268,8 +269,3 @@ footer {
     transform: rotate(360deg);
   }
 }
-
-.wheel.is-visible {
-  animation: rotateWheel 1s linear infinite; /* หมุนล้อ */
-}
-
