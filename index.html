@@ -33,21 +33,21 @@
   <style>
     /* ----------- 3D Zoom-in Animation ----------- */
     @keyframes zoomIn3D {
-      0% {
-        opacity: 0;
-        transform: perspective(800px) rotateX(-10deg) scale(0.8) translateY(30px);
-      }
-      100% {
-        opacity: 1;
-        transform: perspective(800px) rotateX(0deg) scale(1) translateY(0);
-      }
-    }
+  0% {
+    opacity: 0;
+    transform: perspective(800px) rotateX(-10deg) scale(0.8) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0deg) scale(1) translateY(0);
+  }
+}
 
-    .zoom-in-3d {
-      animation: zoomIn3D 1.2s ease-out forwards;
-      backface-visibility: hidden;
-      will-change: transform, opacity;
-    }
+.zoom-in-3d {
+  animation: zoomIn3D 1s ease-out forwards; /* เปลี่ยนเวลาเป็น 1s */
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
   </style>
 </head>
 <body>
