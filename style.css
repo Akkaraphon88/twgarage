@@ -258,7 +258,11 @@ footer {
 .wheel {
   width: 100px; /* ขนาดล้อ */
   height: auto;
+  object-fit: cover; /* ✅ ป้องกันภาพบิดเบี้ยว */
   transition: transform 0.3s ease;
+  will-change: transform;
+  border: none; /* ✅ ลบกรอบออก */
+  box-shadow: none; /* ✅ ไม่มีเงา ถ้าไม่ต้องการ */
 }
 
 
