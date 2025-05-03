@@ -1,7 +1,6 @@
-// ฟังก์ชันที่จะทำให้ล้อหมุนตามการเลื่อนหน้าจอ
 window.addEventListener('scroll', function() {
-  const wheel = document.querySelector('.wheel');
-  const scrollPosition = window.scrollY; // รับค่าการเลื่อนหน้า
+  const wheel = document.querySelector('.wheel'); // เลือกล้อ
+  const scrollPosition = window.scrollY; // รับค่าการเลื่อนหน้าจอ
 
   // ปรับการหมุน: เพิ่มความเร็วในการหมุนด้วยการหารค่าการเลื่อน
   const rotation = scrollPosition / 5; // เพิ่มความเร็วในการหมุน (ปรับตามต้องการ)
