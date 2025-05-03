@@ -246,8 +246,19 @@ footer {
 }
 
 /* ---------- 1. ตำแหน่งของล้อ ---------- */
+/* เพิ่มแอนิเมชันหมุนล้อ */
+@keyframes rotateWheel {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* การตั้งค่าตำแหน่งของล้อ */
 .wheel-container {
-  position: fixed; /* ใช้ตำแหน่งคงที่ */
+  position: fixed; /* ทำให้ตำแหน่งล้อคงที่ */
   z-index: 999; /* ให้อยู่เหนือเนื้อหาบนเว็บไซต์ */
 }
 
@@ -265,20 +276,14 @@ footer {
 
 /* กำหนดขนาดล้อ */
 .wheel {
-  width: 60px; /* ขนาดล้อ */
-  height: 60px; /* ขนาดล้อ */
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  transition: transform 0.3s ease; /* แอนิเมชั่นการหมุน */
-}
-
-/* ---------- 2. การหมุนล้อ ---------- */
-@keyframes rotateWheel {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  background-color: #333;
+  border: 4px solid #ff3333; /* ขอบสีแดง */
+  transition: transform 0.3s ease; /* เพิ่มแอนิเมชันการหมุน */
+  animation: rotateWheel 5s linear infinite; /* ทำให้ล้อหมุน */
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5); /* เพิ่มเงาให้ล้อ */
 }
 
 /* เพิ่มอนิเมชั่นที่ดูหรูหราเมื่อหมุน */
@@ -292,5 +297,5 @@ footer {
 
 /* ---------- 3. ปรับการหมุนล้อให้หมุนตามการเลื่อน ---------- */
 .wheel.is-visible {
-  animation: rotateWheel 1s linear infinite;
+  animation: rotateWheel 2s linear infinite;
 }
